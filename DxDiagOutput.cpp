@@ -18,9 +18,6 @@
 #include <initguid.h>
 #include <dxdiag.h>
 
-
-
-
 //-----------------------------------------------------------------------------
 // Определения и константы
 //-----------------------------------------------------------------------------
@@ -28,16 +25,10 @@
 #define SAFE_DELETE_ARRAY(p) { if(p) { delete[] (p);   (p)=NULL; } }
 #define SAFE_RELEASE(p)      { if(p) { (p)->Release(); (p)=NULL; } }
 
-
-
-
 //-----------------------------------------------------------------------------
 // Функции-прототипы
 //-----------------------------------------------------------------------------
 HRESULT PrintContainerAndChildren( WCHAR* wszParentName, IDxDiagContainer* pDxDiagContainer );
-
-
-
 
 //******************************************************************************
 // Name: main()
@@ -60,7 +51,7 @@ int main( int argc, char* argv[] )
                            ( LPVOID* )&pDxDiagProvider );
     if( SUCCEEDED( hr ) ) // если FAILED(hr) то DirectX 9 не установлен
     {
-		// Заполнить структуру DXDIAG_INIT_PARAMS и передать ее в IDxDiagContainer::Initialize
+	// Заполнить структуру DXDIAG_INIT_PARAMS и передать ее в IDxDiagContainer::Initialize
         // Передача TRUE для bAllowWHQLCecks позволяет dxdiag проверять наличие драйверов.
         // цифровая подпись с логотипом WHQL, который может подключаться через Интернет для обновления
         // WHQL-сертификаты.
@@ -80,8 +71,8 @@ int main( int argc, char* argv[] )
         if( FAILED( hr ) )
             goto LCleanup;
 
-		// Эта функция будет рекурсивно печатать свойства 
-		// корневого узла и всех его дочерних элементов.
+	// Эта функция будет рекурсивно печатать свойства 
+	// корневого узла и всех его дочерних элементов.
         hr = PrintContainerAndChildren( NULL, pDxDiagRoot );
         if( FAILED( hr ) )
             goto LCleanup;
@@ -95,8 +86,6 @@ LCleanup:
 
     return 0;
 }
-
-
 
 
 //-----------------------------------------------------------------------------
@@ -150,7 +139,7 @@ HRESULT PrintContainerAndChildren( WCHAR* wszParentName, IDxDiagContainer* pDxDi
                             break;
                     }
 
-					// Добавить родительское имя впереди, если оно есть, чтобы
+		    // Добавить родительское имя впереди, если оно есть, чтобы
                     // было его легче читать на экране
                     if( wszParentName )
                         wprintf( L"%s.%s = %s\n", wszParentName, wszPropName, wszPropValue );
