@@ -1,4 +1,4 @@
-"# DxDiagOutput" 
+# DxDiagOutput
 
 ---------------------------------------------------------------------------------
 The DxDiagOutput sample shows how to use the DxDiag COM interface by enumerating every child container and enumerating the properties on each child container
