@@ -6,5 +6,5 @@ he DxDiagOutput sample shows how to use the DxDiag COM interface by enumerating 
 путем перечисления каждого дочернего контейнера 
 и перечисления свойств в каждом дочернем контейнере.
 
-
+===
 #### sgiman @ 2022
